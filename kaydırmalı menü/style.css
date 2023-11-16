@@ -1,0 +1,179 @@
+:root{
+  --first-color: #2e2e41;
+  --second-color: #5b85ff;
+  --thirt-color: #434354;
+  --text-color: #fff;
+
+  --box-shodow: 0 5px 25px rgb(2,2,2,0.1);
+  --text-shodow: 0 5px 25px rgb(2,2,2,0.1);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: var(--first-color);
+}
+
+
+section{
+    position: relative;
+    margin: 0 10px;
+    transition: 0.5s ease;
+}
+.main-container{
+    position: relative;
+}
+
+.tab-nav-bar{
+    position: relative;
+    margin: 65px 10px 40px 10px;
+}
+.tab-navigation{
+    position: relative;
+    max-width: fit-content;
+    margin: 0 auto;
+}
+.tab-menu{
+    color: var(--text-color);
+    list-style: none;
+    background: var(--thirt-color);
+    max-width: 800px;
+    padding: 10px;
+    white-space: nowrap;
+    border-bottom: 1px solid var(--thirt-color);
+    border-radius: 50px;
+    box-shadow: var(--box-shodow);
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.tab-btn{
+    color: var(--text-color);
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0 2px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.5 ease;
+}
+.tab-btn:hover{
+  background: var(--second-color);
+}
+.tab-btn.active{
+  background: var(--second-color);
+}
+
+/******************************/
+
+.tab-content{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.tab{
+    max-width: 1100px;
+    padding: 15px 10px;
+    
+}
+.tab .img-card{
+    position: relative;
+    width: 400px;
+    max-width: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    box-shadow: var(--box-shodow);   
+}
+
+.tab{
+    position: absolute;
+    max-width: 1100px;
+    padding: 15px 50px;
+    left: auto;
+    right: auto;
+    top: 0;
+    bottom: 0;
+    margin: 0 auto;
+    transform: translateX(25px);
+    content-visibility: hidden;
+    opacity: 0;
+   
+}
+.tab.active{
+  transform: translateX(0);
+  content-visibility: visible;
+  opacity: 1;
+  transition:  1s ease;
+}
+.tab .row{
+    max-width: 1100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0;
+    gap: 20px;
+}
+.tab .img-card img{
+    width: 100%;
+    height: 350px;
+}
+.right-column{
+    max-width: 800px;
+
+}
+.info .city, .info .desc p{
+   color: var(--text-color);
+   margin-bottom: 10px;
+} 
+
+.info .city{
+    font-size: 2rem;
+    font-family: sans-serif;
+}
+.contry{
+    color: var(--thirt-color);
+    font-size: 5rem;
+    text-align: center;
+    font-family: sans-serif;
+    text-shadow: var(--text-shodow);
+    font-weight: 700;
+}
+
+@media screen and (max-width: 1050px){
+    section{
+     margin: 0 0px;
+    }
+    .tab-nav-bar{
+        margin: 65px 20px 40px 25px;
+    }
+    .tab{
+        padding: 15px 25px;
+        transform: translateX(25px);
+        content-visibility: hidden;
+        opacity: 0;
+    }
+    .tab .row{
+        flex-direction: column;
+    }
+    .tab .img-card{
+        width: auto;
+        max-width: 600px;
+    }
+
+     .contry{
+        font-size: 10vw;
+        padding-bottom: 50px;
+     }
+}
+
+
